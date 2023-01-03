@@ -1,0 +1,9 @@
+[badLoginsProperty]AUTOMATON::> badLoginsProperty() STATE::>loggedOut
+Invalid login
+[badLoginsProperty]MOVED ON METHODCALL: void login.Runner.invalidLogin() TO STATE::> loggedOut
+[badLoginsProperty]AUTOMATON::> badLoginsProperty() STATE::>loggedOut
+Valid login
+[badLoginsProperty]MOVED ON METHODCALL: void login.Runner.validLogin() TO STATE::> loggedIn
+[badLoginsProperty]AUTOMATON::> badLoginsProperty() STATE::>loggedIn
+Valid logout
+[badLoginsProperty]MOVED ON METHODCALL: void login.Runner.logOut() TO STATE::> loggedOut

@@ -1,0 +1,31 @@
+GLOBAL {
+	VARIABLES {
+		boolean loggedIn = false;
+	}
+	
+	EVENTS{
+		alertView() = {*.alertView()}
+		invalidAlertView() = {*.invalidAlertView()}
+	}
+	
+	PROPERTY alertViewProperties{
+		STATES{
+			BAD {
+				badState
+			}
+			NORMAL{
+				viewAlerts
+				}
+			STARTING{
+				loggedIn
+			}
+			
+		}
+		
+		
+		TRANSITIONS{
+			loggedIn -> viewAlerts [alertView\\System.out.println("Valid alert view");]
+			loggedIn -> badState [invalidAlertView\\;System.out.println("Invalid alert view");]
+		}
+	}
+}

@@ -1,0 +1,9 @@
+digraph _logic_alertViewProperties {
+rankdir=LR;
+node [shape = circle]; viewAlerts loggedIn;
+node [shape = octagon]; badState;
+node [shape = point]; _s_s;
+_s_s -> loggedIn;
+loggedIn -> viewAlerts [ label = "(1) alertView\\\\System . out . println ( \" Valid alert view \" ) ; "];
+loggedIn -> badState [ label = "(2) invalidAlertView\\\\; System . out . println ( \" Invalid alert view \" ) ; "];
+}

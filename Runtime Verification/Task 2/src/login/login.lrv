@@ -1,0 +1,30 @@
+GLOBAL {
+	VARIABLES {
+		boolean loggedIn = false;
+	}
+	
+	EVENTS{
+		logOut() = {*.logOut()}
+		validLogin() = {*.validLogin()}
+		invalidLogin() = {*.invalidLogin()}
+	}
+	
+	PROPERTY badLoginsProperty{
+		STATES{
+			NORMAL{
+				loggedIn
+				}
+			STARTING{
+				loggedOut
+			}
+			
+		}
+		
+		
+		TRANSITIONS{
+			loggedOut -> loggedOut [invalidLogin\\loggedIn = false;System.out.println("Invalid login");]
+			loggedOut -> loggedIn [validLogin\\loggedIn = true;System.out.println("Valid login");]
+			loggedIn -> loggedOut [logOut\\loggedIn = false;System.out.println("Valid logout");]
+		}
+	}
+}
